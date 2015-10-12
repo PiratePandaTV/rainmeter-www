@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Rainmeter 3.3 Beta - Rainmeter, desktop customization tool</title>
+	<link href="/css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+	<body class="no-sidebars">
+<div id="wrapper">
+<div id="header" class="clearfix">
+	<a href="/"><div id="logo"></div></a>
+	<div id="nav">
+		<ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+		<li class="leaf"><a href="/about">About</a></li>
+		<li class="leaf"><a href="http://docs.rainmeter.net/" target="_blank" rel="external">Docs</a></li>
+		<li class="leaf"><a href="/discover">Discover</a></li>
+		<li class="last leaf"><a href="/forum">Forum</a></li>
+		</ul>
+	</div>
+</div>
+<div id="main-area-inside" class="clearfix">
+<div id="main" class="inside clearfix">
+	<div id="block-system-main" class="clear-block block block-system">
+		<div class="content"><div class="node">
+<h2>Rainmeter 3.3</h2>
+<div class="content clearfix">
+
+<p>The following are the changes for the 3.3 beta version of Rainmeter.  You can safely install the new 3.3 beta version right over top of your existing Rainmeter 3.2 or earlier installation, and nothing you have done will be lost or changed. There is never any need to uninstall any earlier version of Rainmeter to use the newest version.</p>
+
+<h3>Changes in Rainmeter beta 3.3</h3>
+
+<p>October 4, 2015 - Revision 2468</p>
+<ul>
+<li><b>Changed</b> Context options: Changed the maximum number of ContextTitle<em>N</em> / ContextAction<em>N</em> pairs from 15 to 25.</li>
+<li><b>Fixed</b> Tooltips: Corrected an issue where a dynamic value for a ToolTipTitle would be one skin update behind.</li>
+<li><b>Fixed</b> Tooltips: Corrected an issue where removing a ToolTipTitle with !SetOption would not work.</li>
+</ul>
+
+<p>September 27, 2015 - Revision 2464</p>
+<ul>
+<li><b>Changed</b> SysInfo plugin: Added support for Windows 10 to <code>SysInfoType=OS_VERSION</code>.</li>
+<li><b>Fixed</b> Quote plugin: Corrected an issue where some Unicode characters in a text file read by the plugin could be mistaken for an end-of-file control character and truncate the returned string.</li>
+</ul>
+
+<p>August 15, 2015 - Revision 2461</p>
+<ul>
+<li><b>Added</b> Skins: Added new <a href="http://docs.rainmeter.net/manual-beta/skins/rainmeter-section#SkinWidthHeight" target="_blank" rel="external">SkinWidth</a> and <a href="http://docs.rainmeter.net/manual-beta/skins/rainmeter-section#SkinWidthHeight" target="_blank" rel="external">SkinHeight</a> options to the [Rainmeter] section of a skin. This will constrain the skin to the dimensions defined, either the width, the height, or both. Any meter or part of a meter positioned outside the defined boundaries will be truncated. DynamicWindowSize will be ignored for the defined dimension(s), and meters that would normally display even "outside" the skin will be truncated by the "fixed" skin dimensions.<br><br>
+This can be very useful for having some meter(s) initially defined outside the left/top/right/bottom boundaries of the skin, and then pop or slide into view on mouse or measure actions.<br><br>
+As with all options set in the [Rainmeter] section of the skin, these options cannot be dynamically changed.<br><br>
+An example skin demonstrating how this might be used is at <a href="http://rainmeter.net/forum/viewtopic.php?p=114479" target="_blank" rel="external">Change Announcements</a>.</li>
+<li><b>Fixed</b> IfActions: Corrected an issue with IfMatch where doing a match on a measure that has returned no string value could crash Rainmeter.</li>
+<li><b>Fixed</b> Skin Installer: Corrected an issue with the comparison of plugin versions when multiple plugins were included in the .rmskin.</li>
+<li><b>Fixed</b> String meter: Corrected an issue with <code>InlineSetting=GradientColor</code> where the gradient did not properly react to relative positioning dynamically changing the meter position.</li>
+</ul>
+
+<p>August 11, 2015 - Revision 2457</p>
+<ul>
+<li><b>Fixed</b> WebParser: Fixed a bug introduced in r2455 that caused grandparent > parent > child measures to fail RegExp.</li>
+</ul>
+
+<p>August 11, 2015 - Revision 2455</p>
+<ul>
+<li><b>Fixed</b> String meter: Additional corrections to the Inline Options settings. Fixed an issue when Unicode characters were embedded in the string.</li>
+</ul>
+
+<p>August 6, 2015 - Revision 2438</p>
+<ul>
+<li><b>Changed</b> Skin Installer: The Skin Installer application, used to install .rmskin files in Rainmeter, has been modified so it will by default not replace a newer version of an included 3rd-party plugin with an older version. This is based on the "File version" information in the compiled .dll file(s), and is to protect users from having an old plugin in a .rmskin replace a newer version.<br><br>
+It is very important that all 3rd-party plugin authors keep up-to-date with version information in their plugin releases. Going forward, if an author releases a new version of their plugin, but doesn't change the version number information in the .dll, it will not be installed by Rainmeter if the end-user already has the older version of the plugin.</li>
+<li><b>Fixed</b> String meter: Corrected an issue with the Inline Options <code>GradientColor</code> setting, that was causing incorrect percentage placement of the gradient in some cases.</li>
+<li><b>Fixed</b> Image meter: Corrected an issue where removing a <code>MaskImageName</code> with !SetOption was not possible.</li>
+</ul>
+
+<p>July 31, 2015 - Revision 2423</p>
+<ul>
+<li><b>Added</b> String meter: Added new <a href="http://docs.rainmeter.net/manual-beta/meters/string/inline" target="_blank" rel="external">Inline Options</a> features to the String meter. This will allow "inline" formatting of part or all of a string, and adds several new formatting options including a color gradient. Example skins demonstrating the features can be found at <a href="http://rainmeter.net/forum/viewtopic.php?p=114118" target="_blank" rel="external">Change Announcements</a>.</li>
+<li><b>Added</b> SysInfo plugin: Added <code>SysInfoType=PAGESIZE</code> to the <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo" target="_blank" rel="external">SysInfo</a> plugin.</li>
+<li><b>Fixed</b> Plugin API: Corrected a bug, introduced in r2416, which caused some threaded plugins to fail when sending a FinishAction to Rainmeter.</li>
+</ul>
+
+<p>May 31, 2015 - Revision 2416</p>
+<ul>
+<li><b>Fixed</b> RegExpSubstitute: Corrected a bug, introduced in r2414, where comparisons with an empty string could fail.</li>
+<li><b>Fixed</b> Plugin API: Corrected a long-standing issue where a plugin could crash or hang Rainmeter if Refresh All or Unload Skin was done while the plugin was executing commands to the main Rainmeter process.</li>
+</ul>
+
+<p>May 24, 2015 - Revision 2414</p>
+<ul>
+<li><b>Fixed</b> RegExpSubstitute: Fixed a problem where a (capture) that returned an empty string would cause Rainmeter to hang or crash. Care should still be taken when using <code>*</code> (zero or more) quantifiers or <code>(?(?=</code> (If/Then Lookaround) constructs in RegExpSubstitute, as any (capture) returning an empty string can cause the Substitute to fail.</li>
+<li><b>Fixed</b> Net measures: Improved the detection of "Best" and "named" <code>Interface</code> options on Windows XP.</li>
+</ul>
+
+<p>April 30, 2015 - Revision 2412</p>
+<ul>
+<li><b>Fixed</b> Net measures: Corrected a bug when using Interface with a number, introduced in r2410. It is important that this new version be used in place of r2410.</li>
+</ul>
+
+<p>April 29, 2015 - Revision 2410</p>
+<ul>
+<li><b>Changed</b> Net measures: Changed the values accepted for the <a href="http://docs.rainmeter.net/manual-beta/measures/net#Interface" target="_blank" rel="external">Interface</a> option to accept new values of "Best", which will automatically use the active network interface, or a string value of the name of the desired Network Interface Controller (NIC).</li>
+<li><b>Changed</b> SysInfo plugin: Changed the values accepted for the <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo#SysInfoData" target="_blank" rel="external">SysInfoData</a> option with network related <a href="http://docs.rainmeter.net/manual-beta/plugins/sysinfo#Network" target="_blank" rel="external">SysInfoType</a> options to accept new values of "Best", which will automatically use the active network interface, or a string value of the name of the desired Network Interface Controller (NIC).</li>
+<li><b>Changed</b> About / Log: Changed the Time column in the About / Log panel to use the current time in Hours, Minutes, Seconds and Milliseconds rather than elapsed time since Rainmeter was started.</li>
+</ul>
+
+<p>April 6, 2015 - Revision 2402</p>
+<ul>
+<li><b>Added</b> Loop: Added new <a href="http://docs.rainmeter.net/manual-beta/measures/loop" target="_blank" rel="external">Loop</a> measure. This will create a looping counter between two numbers. The loop will start at <code>StartValue</code>, end at <code>EndValue</code>, increment by <code>Increment</code>, and will loop <code>LoopCount</code> (or endless) times. Details and examples can be found at <a href="http://rainmeter.net/forum/viewtopic.php?p=110828" target="_blank" rel="external">Change Announcements</a>.</li>
+<li><b>Added</b> NowPlaying: Added a value of <code>Genre</code> to the <a href="http://docs.rainmeter.net/manual-beta/plugins/nowplaying#PlayerType" target="_blank" rel="external">PlayerType</a> option. This option value is currently supported with the AIMP, CAD, iTunes, WMP and WinAmp <a href="http://docs.rainmeter.net/manual-beta/plugins/nowplaying#PlayerName" target="_blank" rel="external">PlayerName</a> values.</li> 
+</ul>
+
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div></body>
+
+	<div id="footer">
+		<div id="footer-inside" class="clearfix">Hosting provided by <a href="http://osirisdevelopment.com/">Osiris Development</a>.<br><a href="http://osirisdevelopment.com/BatteryBar">BatteryBar</a> - The most accurate laptop battery meter available.</div>
+	</div>
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>
